@@ -1,0 +1,17 @@
+{% for order in order_list %}
+<h5>{{order.shop}}</h5>
+<h5>{{order.order_date}}</h5>
+{% for food in order.orderfood_set.all %}
+  {{ food.food_name }}
+{% endfor %}
+<br/>
+{% if order.estimated_time == -1 %}
+  <form action="{% url 'timeinput' %}" method="POST">
+      <input type="number" name="estimated_time" id="">
+      <input type="hidden" name="order_id" id="" value="{{order.id}}">
+      <input type="submit" value="예상시간 입력">
+  </form>
+{% else %}
+  {{order.estimated_time}}
+{% endif %}
+{% endfor %}

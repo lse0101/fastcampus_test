@@ -1,0 +1,22 @@
+{% for order in order_list %}
+  <h5>{{order.shop}}</h5>
+  <h5>{{order.order_date}}</h5>
+  {% for food in order.orderfood_set.all %}
+    {{ food.food_name }}
+  {% endfor %}
+  <br/>
+  {% if order.estimated_time == -1 %}
+    미정
+  {% else %}
+    {{order.estimated_time}}
+  {% endif %}
+
+  {% if order.deliver_finish == 0 %}
+    <form action="{% url 'order_list' %}" method="POST">
+        <input type="hidden" name="order_id" id="" value="{{order.id}}">
+        <input type="submit" value="배송완료">
+    </form>
+  {% else %}
+    <br/>완료
+  {% endif %}
+{% endfor %}
