@@ -84,8 +84,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'project1',
         'USER': 'admin',
-        'PASSWORD': '!Ehfkdl82',
-        'HOST': 'database-1.c1vosd6jzmlj.us-east-1.rds.amazonaws.com',
+        'PASSWORD': 'Ehfkdl82',
+        'HOST': 'database-1.cxxqja9nbbmw.ap-northeast-2.rds.amazonaws.com',
         'PORT': '3306',
         'OPTIONS': {
             'init_command' : "SET sql_mode='STRICT_TRANS_TABLES'"
