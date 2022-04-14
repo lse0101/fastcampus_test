@@ -1,10 +1,9 @@
-from telnetlib import STATUS
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.utils import timezone
-from order.models import Shop,Menu,Order,Orderfood
-from django.http import HttpResponse, JsonResponse
-from order.serializers import ShopSerializer, MenuSerializer
 from django.views.decorators.csrf import csrf_exempt
+from order.models import Menu, Order, Orderfood, Shop
+from order.serializers import MenuSerializer, ShopSerializer
 from rest_framework.parsers import JSONParser
 
 # Create your views here.
